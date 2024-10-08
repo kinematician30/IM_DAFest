@@ -1,9 +1,16 @@
 import csv
 import json
+import logging
 import random
 from random import randint
+
 from faker import Faker
 from faker.providers import DynamicProvider
+
+# Configure logging
+logging.basicConfig(filename='student_data_generation.log', level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 # to give the same state for each instance spin.
 Faker.seed(1000)
@@ -115,6 +122,11 @@ fake.add_provider(progress_monitoring_provider)
 fake.add_provider(performance_provider)
 fake.add_provider(score_level_provider)
 
+# logging info 1
+msg_1 = "Added all dynamic providers"
+print(msg_1)
+logger.info(msg_1)
+
 
 # Function to generate a specific number of student data records
 def generate_student_data(num_records):
@@ -122,6 +134,7 @@ def generate_student_data(num_records):
     for _ in range(num_records):
         record = {
             "Timestamp": fake.date_time_this_year(),
+            "ID": _ + 1,
             "Gender": fake.gender(),
             "State": fake.state(),
             "Parent Education Level": fake.parent_education(),
@@ -140,6 +153,9 @@ def generate_student_data(num_records):
             "Score Level": fake.score_level()
         }
         data.append(record)
+        logger.info(record)
+    msg_2 = "all records successfully added to temp storage"
+    logger.info(msg_2)
     return data
 
 
@@ -148,15 +164,27 @@ def write_to_csv(data, filename):
     if data:
         keys = data[0].keys()
         with open(filename, 'w', newline='') as csvfile:
+            msg_3 = f"Opened {filename}"
+            msg_4 = f"Saved to {filename}"
+            print(msg_3)
+            logger.info(msg_3)
             writer = csv.DictWriter(csvfile, fieldnames=keys)
             writer.writeheader()
             writer.writerows(data)
+            print(msg_4)
+            logger.info(msg_4)
 
 
 # Function to write data to JSON
 def write_to_json(data, filename):
     with open(filename, 'w') as jsonfile:
-        json.dump(data, jsonfile, default=str, indent=4)
+        msg_3 = f"Opened {filename}"
+        msg_4 = f"Saved to {filename}"
+        print(msg_3)
+        logger.info(msg_3)
+        json.dump(data, jsonfile, default=str, indent=4)  # dump json data in json file
+        print(msg_4)
+        logger.info(msg_4)
 
 
 # Execute student record generator.
@@ -164,7 +192,8 @@ n_rec = randint(5000, 5500)
 student_data = generate_student_data(n_rec)
 
 # Output to CSV and JSON
-write_to_csv(student_data, '..\\Datasets\\student_data.csv')
-write_to_json(student_data, '..\\Datasets\\student_data.json')
+write_to_csv(student_data, filename='..\\Datasets\\student_data_new.csv')
+write_to_json(student_data, filename='..\\Datasets\\student_data_new.json')
 
 print(f"{n_rec} records written to 'student_data.csv' and 'student_data.json'.")
+logger.info(f"{n_rec} records written to 'student_data.csv' and 'student_data.json'.")
