@@ -159,6 +159,14 @@ def generate_student_data(num_records):
     return data
 
 
+def generate_student_literacy_data(number_records):
+    data = []
+    record = {
+
+    }
+    pass
+
+
 # Function to write data to CSV
 def write_to_csv(data, filename):
     if data:
