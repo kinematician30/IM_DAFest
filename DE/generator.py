@@ -159,12 +159,37 @@ def generate_student_data(num_records):
     return data
 
 
-def generate_student_literacy_data(number_records):
-    data = []
-    record = {
+def weighted_choice(choices, weights):
+    return random.choices(choices, weights=weights, k=1)[0]
 
-    }
-    pass
+
+# Function to generate student data related to skills
+def generate_student_skills_data(num_records):
+    data = []
+    for _ in range(num_records):
+        record = {
+            "ID": _ + 1,
+            "Reading Skill (Scale 1-10)": weighted_choice(
+                range(1, 11), [1, 1, 3, 1, 5, 1, 7, 1, 1, 1]
+            ),
+            "Math Skill (Scale 1-10)": weighted_choice(
+                range(1, 11), [1, 1, 2, 1, 4, 1, 6, 7, 1, 1]
+            ),
+            "Vocabulary Skill (Scale 1-3)": weighted_choice(
+                range(1, 4), [1, 2, 3]
+            ),
+            "Problem-Solving Confidence (Scale 1-10)": weighted_choice(
+                range(1, 11), [1, 1, 3, 1, 1, 1, 6, 7, 8, 1]
+            ),
+            "Math Score (Scale 1-3)": weighted_choice(
+                range(1, 4), [1, 2, 3]  # Same as Vocabulary Skills
+            ),
+            "English Score (Scale 1-3)": weighted_choice(
+                range(1, 4), [3, 2, 1]
+            )
+        }
+        data.append(record)
+    return data
 
 
 # Function to write data to CSV
@@ -198,10 +223,12 @@ def write_to_json(data, filename):
 # Execute student record generator.
 n_rec = randint(5000, 5500)
 student_data = generate_student_data(n_rec)
+student_skill_data = generate_student_skills_data(n_rec)
 
 # Output to CSV and JSON
 write_to_csv(student_data, filename='..\\Datasets\\student_data_new.csv')
 write_to_json(student_data, filename='..\\Datasets\\student_data_new.json')
+write_to_csv(student_skill_data, filename="..\\Datasets\\student_skill_data.csv")
 
 print(f"{n_rec} records written to 'student_data.csv' and 'student_data.json'.")
 logger.info(f"{n_rec} records written to 'student_data.csv' and 'student_data.json'.")
