@@ -42,3 +42,17 @@ machine learning and data engineering to identify underlying problems and develo
 * Predictive Model: Created a valuable tool for predicting student performance and identifying students who may require additional support.
 * By leveraging data analytics and machine learning, this project has contributed to a more data-driven and effective approach to improving secondary education in Africa.
 
+## Additional Information
+### Data Exploration
+
+**Key Insights from Exploratory Data Analysis (EDA)** 
+
+* **Missing Values**: No missing values were found in the dataset. 
+
+* **Data Distribution**: For all variables, the distribution of each unique category was nearly uniform, meaning that the categories appeared in roughly the same frequency across the dataset. This conveys that the data is well-balanced across the categories in each variable. 
+
+* **Correlations**:There was no significant correlation between features. 
+![img.png](img.png)
+
+### Data Warehouse
+Take peek at our data [here](https://airtable.com/applJdHIsCb5z8Do2/shrS30jOLrtNxcvQH/tblDY76xjWl7mqBev)
