@@ -22,7 +22,9 @@ machine learning and data engineering to identify underlying problems and develo
 
 * Exploratory Data Analysis (EDA): Employed EDA techniques to identify patterns, trends, and correlations within the data.
 * Factor Analysis: Analyzed factors such as teacher support, learning style, extracurricular activities, study duration, numeracy and reading skills, and parental involvement to understand their impact on student performance.
+![img.png](img/peek_dshb.png)
 
+See the whole data [here](Data_analysis_Report.pdf)
 ### Model Development
 
 * Machine Learning Algorithms: Utilized machine learning algorithms, such as regression, decision trees, or random forests, to create a predictive model capable of accurately forecasting student performance based on various factors.
