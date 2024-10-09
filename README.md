@@ -15,7 +15,7 @@ machine learning and data engineering to identify underlying problems and develo
 
 ### Data Collection
 
-* Survey Administration: Conducted surveys with students who participated in the 2024 JAMB, WASSCE, and NECO exams to gather comprehensive data on their academic history, demographics, learning styles, and other relevant factors.
+* Survey Administration: Conducted [survey](https://forms.gle/KhFiKMAjwgAnDSn29) with students who participated in the 2024 JAMB, WASSCE, and NECO exams to gather comprehensive data on their academic history, demographics, learning styles, and other relevant factors.
 * Data Ingestion: The collected survey data was ingested into a data warehouse for subsequent analysis and modeling.
 
 ### Data Analysis
@@ -42,8 +42,9 @@ machine learning and data engineering to identify underlying problems and develo
 * Predictive Model: Created a valuable tool for predicting student performance and identifying students who may require additional support.
 * By leveraging data analytics and machine learning, this project has contributed to a more data-driven and effective approach to improving secondary education in Africa.
 
-## Additional Information
-### Data Exploration
+## Appendix
+
+### 1. Data Exploration
 
 **Key Insights from Exploratory Data Analysis (EDA)** 
 
@@ -52,7 +53,7 @@ machine learning and data engineering to identify underlying problems and develo
 * **Data Distribution**: For all variables, the distribution of each unique category was nearly uniform, meaning that the categories appeared in roughly the same frequency across the dataset. This conveys that the data is well-balanced across the categories in each variable. 
 
 * **Correlations**:There was no significant correlation between features. 
-![img.png](img.png)
+![img.png](img/img.png)
 
-### Data Warehouse
-Take peek at our data [here](https://airtable.com/applJdHIsCb5z8Do2/shrS30jOLrtNxcvQH/tblDY76xjWl7mqBev)
+### 2. Data Warehouse
+Take peek at our data [here](https://airtable.com/applJdHIsCb5z8Do2/shrS30jOLrtNxcvQH/tblDY76xjWl7mqBev) via airtable
