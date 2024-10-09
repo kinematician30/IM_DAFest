@@ -57,3 +57,6 @@ machine learning and data engineering to identify underlying problems and develo
 
 ### 2. Data Warehouse
 Take peek at our data [here](https://airtable.com/applJdHIsCb5z8Do2/shrS30jOLrtNxcvQH/tblDY76xjWl7mqBev) via airtable
+
+#### 2.1 Data System Design
+![Datafest System Design.png](img%2FDatafest%20System%20Design.png)
